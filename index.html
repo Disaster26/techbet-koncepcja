@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TECHBET Lublin - inwestycje budowlane i domy do stanu deweloperskiego</title>
+<meta name="description" content="TECHBET, firma budowlana z Lublina: inwestycje budowlane oraz domy do stanu deweloperskiego. Wykonanie, organizacja budowy i dostawy materiałów.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#111213">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" imagesizes="(max-width:760px) 100vw, 50vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013,U+2018-2019,U+201C-201E,U+2026}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--czern:#111213;--grafit:#1c1e21;--szary:#9c9b9b;--szary-t:#6f6e6e;--jasny:#eef0f2;--bial:#fff;--bez:#f5f0e8;--piasek:#e8ddcd;--miedz:#a24f22;--miedz-j:#c0662f;--hh:72px;--wrap:min(92vw,1720px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh)}
+body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--czern);background:#fff;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.wrap{width:var(--wrap);margin:0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* przyciski: prostokatne, ostre jak belka z logo */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:50px;padding:0 26px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn-b{background:#fff;color:var(--czern)}
+.btn-b:hover{background:var(--szary);color:#fff}
+.btn-c{background:var(--czern);color:#fff}
+.btn-c:hover{background:#2c2f33}
+.btn-m{background:var(--miedz);color:#fff}
+.btn-m:hover{background:#86401a}
+.btn .str{display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.btn .str::after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg);transform-origin:center}
+
+/* naglowek */
+.top{position:sticky;top:0;z-index:50;height:var(--hh);background:#fff;border-bottom:1px solid #e3e5e8}
+.top .wrap{height:100%;display:flex;align-items:center;gap:28px}
+.logo{display:block;width:176px;flex:none}
+.logo svg{display:block;width:100%;height:auto}
+.menu{display:flex;gap:30px;margin-left:auto;list-style:none}
+.menu a{text-decoration:none;font-weight:600;font-size:16px;padding:6px 0;border-bottom:3px solid transparent}
+.menu a:hover{border-color:var(--szary)}
+.menu a.akt{border-color:var(--czern)}
+.top .tel{font-weight:700;text-decoration:none;white-space:nowrap}
+.top .btn{min-height:44px;padding:0 20px;font-size:15px}
+.burger{display:none;margin-left:auto;width:48px;height:48px;border:0;background:none;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:12px;width:24px;height:2px;background:var(--czern);content:"";transition:transform .2s}
+.burger span{top:23px}.burger span::before{left:0;top:-8px}.burger span::after{left:0;top:8px}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span::after{transform:translateY(-8px) rotate(-45deg)}
+
+/* pierwszy ekran: dwie drogi */
+.hero{min-height:calc(100svh - var(--hh));display:flex;flex-direction:column}
+.pas{background:#fff}
+.pas .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px}
+.pas h1{font-size:clamp(21px,1.75vw,32px);line-height:1.2;font-weight:700;letter-spacing:-.01em}
+.pas p{color:var(--szary-t);font-size:15px;white-space:nowrap}
+.drogi{flex:1 1 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:440px}
+.droga{position:relative;display:flex;align-items:flex-end;overflow:hidden;text-decoration:none;isolation:isolate}
+.droga img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.droga:hover img{transform:scale(1.03)}
+.droga::before{content:"";position:absolute;inset:0;z-index:-1}
+.d-inw{color:#fff}
+.d-inw::before{background:linear-gradient(to top,rgba(12,12,13,.9) 0%,rgba(12,12,13,.55) 45%,rgba(12,12,13,.15) 100%)}
+.d-dom{color:var(--czern)}
+.d-dom::before{background:linear-gradient(to top,rgba(245,240,232,.97) 0%,rgba(245,240,232,.86) 38%,rgba(245,240,232,0) 72%)}
+.tresc{width:100%;padding:0 clamp(20px,4vw,72px) clamp(28px,5vh,64px)}
+.d-inw .tresc{padding-left:max(4vw,calc((100vw - var(--wrap))/2))}
+.znak{display:flex;align-items:center;gap:clamp(12px,1.2vw,20px);margin-bottom:12px}
+.znak svg{width:clamp(38px,3.6vw,64px);height:auto;flex:none}
+.znak h2{font-size:clamp(40px,4.6vw,84px);line-height:1;font-weight:800;letter-spacing:-.025em}
+.tresc p{font-size:clamp(16px,1.15vw,20px);max-width:34em;margin-bottom:24px}
+.d-inw .tresc p{color:#dcdcdc}
+.d-dom .tresc p{color:#3a3530}
+
+/* sekcje */
+.sek{padding:clamp(64px,8vw,128px) 0}
+.belka{display:block;width:clamp(64px,6vw,108px);height:clamp(10px,.9vw,16px);margin-bottom:22px}
+.glowa{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,96px);align-items:end;margin-bottom:clamp(36px,4vw,64px)}
+.glowa h2{font-size:clamp(36px,4vw,68px);line-height:1.02;font-weight:800;letter-spacing:-.025em}
+.glowa p{font-size:clamp(17px,1.2vw,20px);max-width:44em}
+.glowa p+p{margin-top:12px}
+
+.s-inw{background:var(--czern);color:#fff}
+.s-inw .belka{background:var(--szary)}
+.s-inw .glowa p{color:#cfcfcf}
+.s-dom{background:var(--bez)}
+.s-dom .belka{background:var(--miedz)}
+.s-dom .glowa p{color:#3a3530}
+
+/* portfolio: przesuwane palcem i mysza */
+.tasma{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*20px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;padding-bottom:4px}
+.tasma::-webkit-scrollbar{display:none}
+.tasma.ciag{cursor:grabbing;scroll-snap-type:none}
+.tasma.ciag *{pointer-events:none}
+.kafel{scroll-snap-align:start;min-width:0}
+.kafel button{display:block;width:100%;border:0;padding:0;background:none;position:relative;aspect-ratio:4/3;overflow:hidden}
+.kafel button::before{content:"";position:absolute;left:0;top:0;width:42%;height:8px;z-index:1}
+.s-inw .kafel button::before{background:var(--szary)}
+.s-dom .kafel button::before{background:var(--miedz)}
+.kafel img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.kafel button:hover img{transform:scale(1.04)}
+.kafel h3{font-size:18px;font-weight:700;margin-top:14px;line-height:1.3}
+.kafel p{font-size:15px;margin-top:2px}
+.s-inw .kafel p{color:#a9a9a9}
+.s-dom .kafel p{color:#6b6157}
+.s-dom .kafel button{background:#fff}
+.nawig{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px}
+.nawig .strz{display:flex;gap:10px}
+.strz button{width:52px;height:52px;border:2px solid currentColor;background:none;color:inherit;position:relative}
+.strz button::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:11px;border-top:2px solid currentColor;border-right:2px solid currentColor}
+.strz .nast::after{transform:translate(-70%,-50%) rotate(45deg)}
+.strz .pop::after{transform:translate(-30%,-50%) rotate(-135deg)}
+.strz button:hover{background:currentColor}
+.s-inw .strz button:hover::after{border-color:var(--czern)}
+.s-dom .strz button:hover::after{border-color:var(--bez)}
+.nawig small{font-size:14px;opacity:.75}
+
+/* zakres prac */
+.s-zak{background:#fff}
+.trzy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,56px)}
+.trzy div{border-top:2px solid #e3e5e8;padding-top:22px;position:relative}
+.trzy div::before{content:"";position:absolute;left:0;top:-2px;width:72px;height:10px;background:var(--czern)}
+.trzy h3{font-size:clamp(21px,1.6vw,28px);font-weight:700;margin:8px 0 10px;line-height:1.2}
+.trzy p{color:#4a4d52}
+
+/* dron */
+.s-dron{background:var(--jasny);padding:0}
+.dron{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:stretch}
+.dron figure{position:relative;min-height:clamp(320px,38vw,640px)}
+.dron figure button{position:absolute;inset:0;border:0;padding:0;background:none}
+.dron figure img{width:100%;height:100%;object-fit:cover}
+.dron .opis{padding:clamp(40px,5vw,96px) clamp(24px,4vw,80px);align-self:center;max-width:720px}
+.dron .belka{background:var(--czern)}
+.dron h2{font-size:clamp(32px,3.2vw,56px);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+.dron p{font-size:clamp(17px,1.15vw,20px);color:#3e4146}
+
+/* kontakt */
+.s-kon{background:#fff}
+.kon{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px)}
+.kon h2{font-size:clamp(36px,4vw,68px);line-height:1.02;font-weight:800;letter-spacing:-.025em;margin-bottom:20px}
+.kon .belka{background:var(--czern)}
+.dane{list-style:none;margin-top:28px;display:grid;gap:18px}
+.dane li{border-top:1px solid #e3e5e8;padding-top:14px}
+.dane b{display:block;font-size:14px;color:var(--szary-t);font-weight:600}
+.dane a{font-size:clamp(19px,1.4vw,24px);font-weight:700;text-decoration:none}
+.dane a:hover{text-decoration:underline}
+.dane span{font-size:18px}
+form{background:var(--jasny);padding:clamp(24px,3vw,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 18px;align-content:start}
+form .cala{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input,select,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #c9cdd2;background:#fff;color:var(--czern);border-radius:0}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--czern);outline-offset:0;border-color:var(--czern)}
+.wybor{display:flex;gap:10px}
+.wybor label{flex:1;margin:0;display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:2px solid #c9cdd2;background:#fff;font-size:16px;cursor:pointer}
+.wybor input{width:auto;accent-color:var(--czern)}
+.wybor label:has(input:checked){border-color:var(--czern)}
+form .btn{justify-self:start}
+.info{font-size:14px;color:#4a4d52}
+.wynik{font-weight:600}
+
+/* stopka */
+.stopka{background:var(--czern);color:#d4d4d4;padding:56px 0 28px;font-size:15px}
+.stopka .wrap{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:32px}
+.stopka .logo{width:190px;margin-bottom:14px}
+.stopka h3{font-size:15px;color:#fff;margin-bottom:8px}
+.stopka a{text-decoration:none}
+.stopka a:hover{text-decoration:underline}
+.stopka ul{list-style:none;display:grid;gap:4px}
+.spod{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #2c2e31;padding-top:20px;font-size:14px;color:#a3a3a3}
+
+/* pasek na telefonie po przewinieciu */
+.mob{display:none}
+
+/* powiekszenie zdjec */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,11,.94);display:none;align-items:center;justify-content:center;padding:56px 64px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;width:52px;height:52px;border:2px solid #fff;background:rgba(0,0,0,.4);color:#fff}
+.lb .zam{top:14px;right:14px}
+.lb .zam::before,.lb .zam::after{content:"";position:absolute;left:12px;top:23px;width:24px;height:2px;background:#fff;transform:rotate(45deg)}
+.lb .zam::after{transform:rotate(-45deg)}
+.lb .pop,.lb .nast{top:50%;margin-top:-26px}
+.lb .pop{left:10px}.lb .nast{right:10px}
+.lb .pop::after,.lb .nast::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:11px;border-top:2px solid #fff;border-right:2px solid #fff}
+.lb .nast::after{transform:translate(-70%,-50%) rotate(45deg)}
+.lb .pop::after{transform:translate(-30%,-50%) rotate(-135deg)}
+.lb p{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#e5e5e5;font-size:15px}
+
+
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+
+@media (min-width:1900px){.tasma{grid-auto-columns:calc((100% - 4*20px)/5)}}
+@media (max-width:1180px){
+  .menu{gap:22px}.top .btn{display:none}
+  .tasma{grid-auto-columns:calc((100% - 2*20px)/3)}
+}
+@media (max-width:900px){
+  :root{--hh:60px}
+  .logo{width:150px}
+  .menu,.top .tel{display:none}
+  .burger{display:block}
+  .menu.otw{display:flex;position:fixed;top:var(--hh);left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid #e3e5e8;padding:8px 4vw 20px;box-shadow:0 18px 30px rgba(0,0,0,.12)}
+  .menu.otw a{display:block;padding:14px 0;font-size:19px;border-bottom:1px solid #eceef0}
+  .menu.otw a.akt{border-bottom-color:#eceef0;font-weight:800}
+  .menu.otw li.tel-m{display:block}
+  .glowa,.kon,.dron{grid-template-columns:minmax(0,1fr)}
+  .glowa{gap:16px}
+  .trzy{grid-template-columns:minmax(0,1fr);gap:28px}
+  .stopka .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stopka .wrap>div:first-child{grid-column:1/-1}
+}
+.tel-m{display:none}
+@media (max-width:760px){
+  .pas .wrap{padding:12px 0 14px}
+  .pas h1{font-size:clamp(19px,5.4vw,23px)}
+  .pas p{display:none}
+  .drogi{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);min-height:0}
+  .droga{min-height:250px}
+  .tresc,.d-inw .tresc{padding:0 4vw 20px}
+  .znak{margin-bottom:6px}
+  .znak svg{width:34px}
+  .znak h2{font-size:clamp(34px,10vw,44px)}
+  .tresc p{font-size:15.5px;line-height:1.45;margin-bottom:24px}
+  .tresc .btn{min-height:46px}
+  .d-inw::before{background:linear-gradient(to top,rgba(12,12,13,.9) 0%,rgba(12,12,13,.6) 55%,rgba(12,12,13,.25) 100%)}
+  .d-dom::before{background:linear-gradient(to top,rgba(245,240,232,.97) 0%,rgba(245,240,232,.88) 50%,rgba(245,240,232,0) 92%)}
+  .tasma{grid-auto-columns:82%;gap:14px}
+  form{grid-template-columns:minmax(0,1fr)}
+  .nawig small{font-size:13px}
+  .lb{padding:56px 8px}
+  .lb .pop,.lb .nast{top:auto;bottom:10px;margin:0}
+  .lb p{bottom:72px}
+  .mob{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(110%);transition:transform .25s}
+  .mob.widac{transform:none}
+  .mob a{min-height:54px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none}
+  .mob a:first-child{background:#fff;color:var(--czern);border-top:1px solid #d9dce0}
+  .mob a:last-child{background:var(--czern);color:#fff}
+  .stopka{padding-bottom:80px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .pas h1{font-size:18.5px}
+  .droga{min-height:236px}
+  .tresc p{font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="b-glif" fill-rule="evenodd" d="M48 172H234C277 172 300 195 300 234C300 252 293 264 279 270C294 276 300 290 300 309C300 347 277 368 237 368H48ZM108 212H229C237 212 241 216 241 224V234C241 242 237 246 229 246H108ZM108 290H229C237 290 241 294 241 302V314C241 322 237 326 229 326H108Z"/>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="TECHBET - strona główna">
+      <svg viewBox="40 90 1070 290" role="img" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#111213"/><text x="350" y="358" font-family="Archivo,sans-serif" font-size="196" font-weight="400" textLength="745" lengthAdjust="spacingAndGlyphs"><tspan fill="#8a8989">TECH</tspan><tspan fill="#111213">BET</tspan></text></svg>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#inwestycje">Inwestycje</a></li>
+      <li><a href="#domy">Domy</a></li>
+      <li><a href="#o-firmie">O firmie</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li class="tel-m"><a href="tel:+48573132369">Biuro: 573 132 369</a></li>
+    </ul>
+    <a class="tel" href="tel:+48573132369">573 132 369</a>
+    <a class="btn btn-c" href="#kontakt">Zapytaj o wycenę</a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="pas">
+    <div class="wrap">
+      <h1>Firma budowlana z Lublina - inwestycje i domy do stanu deweloperskiego</h1>
+      <p>ul. Mełgiewska 30F, Lublin</p>
+    </div>
+  </div>
+  <div class="drogi">
+    <a class="droga d-inw" href="#inwestycje">
+      <img src="img/i-hero-1024.webp" srcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, 50vw" width="2000" height="1333" alt="Budynek w konstrukcji z dźwigami wieżowymi" fetchpriority="high">
+      <div class="tresc">
+        <div class="znak"><svg viewBox="40 90 270 285" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#fff"/></svg><h2>Inwestycje</h2></div>
+        <p>Budynki i obiekty realizowane od organizacji budowy, przez wykonawstwo, po dostawy materiałów.</p>
+        <span class="btn btn-b">Zobacz inwestycje <i class="str"></i></span>
+      </div>
+    </a>
+    <a class="droga d-dom" href="#domy">
+      <img src="img/d-hero-1024.webp" srcset="img/d-hero-640.webp 640w, img/d-hero-1024.webp 1024w, img/d-hero-1600.webp 1600w, img/d-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, 50vw" width="2000" height="1677" alt="Nowoczesny dom jednorodzinny z drewnianą elewacją" fetchpriority="high">
+      <div class="tresc">
+        <div class="znak"><svg viewBox="40 90 270 285" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#a24f22"/><use href="#b-glif" fill="#111213"/></svg><h2>Domy</h2></div>
+        <p>Budujemy domy do stanu deweloperskiego - z wykonaniem, organizacją prac i dostawami materiałów.</p>
+        <span class="btn btn-m">Zobacz domy <i class="str"></i></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="sek s-inw" id="inwestycje">
+  <div class="wrap">
+    <div class="glowa">
+      <div><span class="belka"></span><h2>Inwestycje</h2></div>
+      <div>
+        <p>Prowadzimy inwestycje budowlane w Lublinie i okolicy. Bierzemy na siebie całą budowę: organizację prac, wykonawstwo i dostawy materiałów, tak żeby inwestor miał jednego partnera od fundamentów po odbiór.</p>
+      </div>
+    </div>
+    <div class="tasma" data-galeria="inw">
+      <article class="kafel"><button data-big="img/i1-1600.webp" data-opis="Konstrukcja żelbetowa" aria-label="Powiększ: Konstrukcja żelbetowa"><img src="img/i1-720.webp" width="720" height="477" loading="lazy" alt="Konstrukcja żelbetowa - zbrojenie stropu"></button><h3>Konstrukcja żelbetowa</h3><p>Zbrojenie stropu</p></article>
+      <article class="kafel"><button data-big="img/i2-1600.webp" data-opis="Zbrojenie słupów" aria-label="Powiększ: Zbrojenie słupów"><img src="img/i2-720.webp" width="720" height="524" loading="lazy" alt="Zbrojenie słupów - prace na wysokości"></button><h3>Zbrojenie słupów</h3><p>Prace na wysokości</p></article>
+      <article class="kafel"><button data-big="img/i4-1600.webp" data-opis="Budynek wielokondygnacyjny" aria-label="Powiększ: Budynek wielokondygnacyjny"><img src="img/i4-720.webp" width="720" height="480" loading="lazy" alt="Budynek wielokondygnacyjny - dźwigi wieżowe na budowie"></button><h3>Budynek wielokondygnacyjny</h3><p>Dźwigi wieżowe na budowie</p></article>
+      <article class="kafel"><button data-big="img/i5-1600.webp" data-opis="Szkielet budynku" aria-label="Powiększ: Szkielet budynku"><img src="img/i5-720.webp" width="720" height="873" loading="lazy" alt="Szkielet budynku - stan surowy otwarty"></button><h3>Szkielet budynku</h3><p>Stan surowy otwarty</p></article>
+      <article class="kafel"><button data-big="img/i6-1600.webp" data-opis="Budynek mieszkalny" aria-label="Powiększ: Budynek mieszkalny"><img src="img/i6-720.webp" width="720" height="533" loading="lazy" alt="Budynek mieszkalny - elewacja z balkonami"></button><h3>Budynek mieszkalny</h3><p>Elewacja z balkonami</p></article>
+      <article class="kafel"><button data-big="img/i3-1600.webp" data-opis="Odbiór płyty" aria-label="Powiększ: Odbiór płyty"><img src="img/i3-720.webp" width="720" height="480" loading="lazy" alt="Odbiór płyty - ekipa na budowie"></button><h3>Odbiór płyty</h3><p>Ekipa na budowie</p></article>
+
+    </div>
+    <div class="nawig"><small>Zdjęcia poglądowe - docelowo Państwa realizacje i ujęcia z drona.</small><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
+  </div>
+</section>
+
+<section class="sek s-dom" id="domy">
+  <div class="wrap">
+    <div class="glowa">
+      <div><span class="belka"></span><h2>Domy</h2></div>
+      <div>
+        <p>Budujemy domy do stanu deweloperskiego. Zajmujemy się wykonaniem, organizacją prac i dostawami materiałów - Państwo dostają gotowy budynek i jasny zakres prac już na etapie wyceny.</p>
+        <p><a class="btn btn-m" href="#kontakt">Prześlij projekt do wyceny <i class="str"></i></a></p>
+      </div>
+    </div>
+    <div class="tasma" data-galeria="dom">
+      <article class="kafel"><button data-big="img/d1-1600.webp" data-opis="Dom z drewnianą elewacją" aria-label="Powiększ: Dom z drewnianą elewacją"><img src="img/d1-720.webp" width="720" height="480" loading="lazy" alt="Dom z drewnianą elewacją - stan wykończony"></button><h3>Dom z drewnianą elewacją</h3><p>Stan wykończony</p></article>
+      <article class="kafel"><button data-big="img/d2-1600.webp" data-opis="Dom z tarasem" aria-label="Powiększ: Dom z tarasem"><img src="img/d2-720.webp" width="720" height="480" loading="lazy" alt="Dom z tarasem - bryła z dużymi przeszkleniami"></button><h3>Dom z tarasem</h3><p>Bryła z dużymi przeszkleniami</p></article>
+      <article class="kafel"><button data-big="img/d3-1600.webp" data-opis="Dom piętrowy" aria-label="Powiększ: Dom piętrowy"><img src="img/d3-720.webp" width="720" height="1080" loading="lazy" alt="Dom piętrowy - elewacja z okładziną drewnianą"></button><h3>Dom piętrowy</h3><p>Elewacja z okładziną drewnianą</p></article>
+      <article class="kafel"><button data-big="img/d4-1600.webp" data-opis="Dom w bieli" aria-label="Powiększ: Dom w bieli"><img src="img/d4-720.webp" width="720" height="720" loading="lazy" alt="Dom w bieli - prosta, nowoczesna bryła"></button><h3>Dom w bieli</h3><p>Prosta, nowoczesna bryła</p></article>
+      <article class="kafel"><button data-big="img/d5-1600.webp" data-opis="Wnętrze domu" aria-label="Powiększ: Wnętrze domu"><img src="img/d5-720.webp" width="720" height="480" loading="lazy" alt="Wnętrze domu - salon ze schodami"></button><h3>Wnętrze domu</h3><p>Salon ze schodami</p></article>
+      <article class="kafel"><button data-big="img/d6-1600.webp" data-opis="Wnętrze domu" aria-label="Powiększ: Wnętrze domu"><img src="img/d6-720.webp" width="720" height="490" loading="lazy" alt="Wnętrze domu - strefa dzienna z kuchnią"></button><h3>Wnętrze domu</h3><p>Strefa dzienna z kuchnią</p></article>
+
+    </div>
+    <div class="nawig"><small>Zdjęcia poglądowe - docelowo domy zbudowane przez TECHBET.</small><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
+  </div>
+</section>
+
+<section class="sek s-zak" id="o-firmie">
+  <div class="wrap">
+    <div class="glowa">
+      <div><span class="belka" style="background:var(--czern)"></span><h2>Jak prowadzimy budowę</h2></div>
+      <p>TECHBET to firma budowlana z siedzibą przy ul. Mełgiewskiej w Lublinie. Inwestycje i domy prowadzimy tak samo: jeden wykonawca, jedna osoba odpowiedzialna za budowę i zakres prac ustalony przed startem.</p>
+    </div>
+    <div class="trzy">
+      <div><h3>Kompleksowe wykonanie</h3><p>Od fundamentów po stan deweloperski - wszystkie etapy budowy w jednych rękach.</p></div>
+      <div><h3>Organizacja budowy</h3><p>Harmonogram, ekipy i dostawy materiałów planujemy sami, żeby budowa nie stała.</p></div>
+      <div><h3>Jasny zakres prac</h3><p>Przed podpisaniem umowy wiadomo, co dokładnie wykonujemy i co jest w cenie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dron">
+  <div class="dron">
+    <figure><button data-big="img/i3-1600.webp" data-opis="Budowa z góry" aria-label="Powiększ zdjęcie budowy z góry"><img src="img/i3-1600.webp" srcset="img/i3-720.webp 720w, img/i3-1600.webp 1600w" sizes="(max-width:900px) 100vw, 58vw" width="1600" height="1067" loading="lazy" alt="Ekipa budowy na płycie fundamentowej, widok z góry"></button></figure>
+    <div class="opis">
+      <span class="belka"></span>
+      <h2>Nasze budowy z lotu ptaka</h2>
+      <p>Kierownik budowy fotografuje nasze realizacje dronem. W portfolio każda inwestycja i każdy dom mogą mieć zdjęcia z góry - widać skalę, postęp prac i jakość wykonania.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sek s-kon" id="kontakt">
+  <div class="wrap kon">
+    <div>
+      <span class="belka"></span>
+      <h2>Porozmawiajmy o budowie</h2>
+      <p>Prześlij projekt albo opisz inwestycję - odpowiemy z wyceną i zakresem prac.</p>
+      <ul class="dane">
+        <li><b>Biuro</b><a href="tel:+48573132369">573 132 369</a><br><a href="mailto:biuro@techbet.lublin.pl">biuro@techbet.lublin.pl</a></li>
+        <li><b>Tomasz Kosikowski</b><a href="tel:+48509709840">509 709 840</a><br><a href="mailto:t.kosikowski@techbet.lublin.pl">t.kosikowski@techbet.lublin.pl</a></li>
+        <li><b>Adres</b><span>ul. Mełgiewska 30F, 20-234 Lublin</span></li>
+      </ul>
+    </div>
+    <form id="form" novalidate>
+      <div class="cala"><span class="sr">Czego dotyczy zapytanie</span><div class="wybor" role="radiogroup" aria-label="Czego dotyczy zapytanie"><label><input type="radio" name="typ" value="inwestycja" checked> Inwestycja</label><label><input type="radio" name="typ" value="dom"> Dom</label></div></div>
+      <div><label for="f-imie">Imię i nazwisko</label><input id="f-imie" name="imie" autocomplete="name"></div>
+      <div><label for="f-tel">Telefon</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+      <div class="cala"><label for="f-mail">E-mail</label><input id="f-mail" name="mail" type="email" autocomplete="email"></div>
+      <div class="cala"><label for="f-wiad">Opis inwestycji lub domu</label><textarea id="f-wiad" name="wiad" placeholder="Lokalizacja, powierzchnia, termin"></textarea></div>
+      <div class="cala"><label for="f-plik">Projekt (PDF, JPG, opcjonalnie)</label><input id="f-plik" name="plik" type="file" accept=".pdf,.jpg,.jpeg,.png"></div>
+      <div class="cala"><button class="btn btn-c" type="submit">Wyślij zapytanie</button></div>
+      <p class="cala info wynik" id="wynik" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#" aria-label="TECHBET - na górę strony"><svg viewBox="40 90 1070 290" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#fff"/><text x="350" y="358" font-family="Archivo,sans-serif" font-size="196" font-weight="400" textLength="745" lengthAdjust="spacingAndGlyphs"><tspan fill="#9c9b9b">TECH</tspan><tspan fill="#fff">BET</tspan></text></svg></a>
+      <p>Firma budowlana z Lublina. Inwestycje budowlane i domy do stanu deweloperskiego.</p>
+    </div>
+    <div><h3>Oferta</h3><ul><li><a href="#inwestycje">Inwestycje</a></li><li><a href="#domy">Domy</a></li><li><a href="#o-firmie">O firmie</a></li></ul></div>
+    <div><h3>Biuro</h3><ul><li><a href="tel:+48573132369">573 132 369</a></li><li><a href="mailto:biuro@techbet.lublin.pl">biuro@techbet.lublin.pl</a></li></ul></div>
+    <div><h3>Adres</h3><p>ul. Mełgiewska 30F<br>20-234 Lublin</p></div>
+    <div class="spod"><span>© <span id="rok">2026</span> TECHBET. Zdjęcia poglądowe: Unsplash.</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=techbet.lublin.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+  </div>
+</footer>
+
+<div class="mob" id="mob"><a href="tel:+48573132369">Zadzwoń</a><a href="#kontakt">Zapytaj o wycenę</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <img alt="">
+  <p></p>
+  <button class="zam" aria-label="Zamknij"></button>
+  <button class="pop" aria-label="Poprzednie zdjęcie"></button>
+  <button class="nast" aria-label="Następne zdjęcie"></button>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
