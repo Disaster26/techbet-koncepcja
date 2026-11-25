@@ -5,11 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TECHBET Lublin - inwestycje budowlane i domy do stanu deweloperskiego</title>
 <meta name="description" content="TECHBET, firma budowlana z Lublina: inwestycje budowlane oraz domy do stanu deweloperskiego. Wykonanie, organizacja budowy i dostawy materiałów.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow" data-podglad>
+<link rel="canonical" href="https://techbet.lublin.pl/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="TECHBET Lublin - inwestycje budowlane i domy do stanu deweloperskiego">
+<meta property="og:description" content="TECHBET, firma budowlana z Lublina: inwestycje budowlane oraz domy do stanu deweloperskiego. Wykonanie, organizacja budowy i dostawy materiałów.">
+<meta property="og:url" content="https://techbet.lublin.pl/">
+<meta property="og:image" content="https://techbet.lublin.pl/img/i-hero-1600.webp">
 <meta name="theme-color" content="#111213">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fonts/archivo-rdzen.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/webp" imagesrcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" imagesizes="(max-width:760px) 100vw, 50vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" imagesizes="(max-width:760px) 100vw, max(50vw, 130vh)" fetchpriority="high">
 <style>
 @font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013,U+2018-2019,U+201C-201E,U+2026}
 @font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
@@ -203,6 +212,126 @@ form .btn{justify-self:start}
 .wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
 @media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
 
+/* znak wykonawcy w rozmiarze copyright */
+.spod .wylinka-badge{font-size:1em}
+
+/* okruszki */
+.okr{font-size:14px;margin-bottom:22px}
+.okr ol{list-style:none;display:flex;flex-wrap:wrap;gap:4px 8px}
+.okr li+li::before{content:"/";margin-right:8px;opacity:.45}
+.okr a{text-decoration:none;opacity:.8}
+.okr a:hover{text-decoration:underline;opacity:1}
+.okr [aria-current]{font-weight:600}
+
+/* pierwszy ekran podstrony: panel w barwach sciezki + zdjecie do krawedzi */
+.ph{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:min(calc(100svh - var(--hh)),860px)}
+.ph .tx{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(40px,5vw,96px) clamp(24px,4vw,80px) clamp(40px,5vw,88px) max(4vw,calc((100vw - var(--wrap))/2))}
+.ph h1{font-size:clamp(38px,4vw,74px);line-height:1.03;font-weight:800;letter-spacing:-.025em;margin-bottom:20px}
+.ph .lead{font-size:clamp(17px,1.2vw,21px);max-width:32em;margin-bottom:28px}
+.ph .btn{align-self:flex-start}
+.ph figure{position:relative;min-height:420px;overflow:hidden}
+.ph figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-inw{background:var(--czern);color:#fff}
+.ph-inw .lead{color:#d0d0d0}
+.ph-inw .belka{background:var(--szary)}
+.ph-dom{background:var(--bez);color:var(--czern)}
+.ph-dom .lead{color:#3a3530}
+.ph-dom .belka{background:var(--miedz)}
+
+/* zwykly naglowek podstrony (kontakt, polityka) */
+.pn{padding:clamp(36px,5vw,80px) 0 clamp(28px,3vw,48px)}
+.pn h1{font-size:clamp(34px,3.6vw,64px);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin-bottom:16px}
+.pn .lead{font-size:clamp(17px,1.2vw,20px);max-width:40em;color:#3e4146}
+.pn .belka{background:var(--czern)}
+
+/* zakres: wiersze tytul + opis */
+.wiersze{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 clamp(24px,4vw,80px)}
+.wiersze li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px;padding:22px 0;border-top:1px solid #dfe2e6}
+.wiersze h3{font-size:clamp(18px,1.3vw,22px);font-weight:700;line-height:1.25}
+.wiersze p{color:#4a4d52}
+
+/* etapy */
+.etapy{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,48px) clamp(24px,3vw,56px)}
+.etapy li{border-top:2px solid #dfe2e6;padding-top:22px;position:relative}
+.etapy li::before{content:"";position:absolute;left:0;top:-2px;width:72px;height:10px;background:var(--czern)}
+.etapy .nr{display:block;font-size:clamp(30px,2.4vw,44px);font-weight:800;line-height:1;color:var(--szary);margin-bottom:12px}
+.etapy h3{font-size:clamp(20px,1.5vw,26px);font-weight:700;line-height:1.2;margin-bottom:8px}
+.etapy p{color:#4a4d52}
+.e-dom li::before{background:var(--miedz)}
+.e-dom .nr{color:var(--miedz)}
+.s-jas{background:var(--jasny)}
+.s-bia{background:#fff}
+
+/* portfolio: karty z wlasna galeria */
+.realizacje{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,2.4vw,40px) clamp(20px,2vw,36px)}
+.real{min-width:0}
+.mini{position:relative}
+.mini::before{content:"";position:absolute;left:0;top:0;width:42%;height:8px;z-index:2;pointer-events:none}
+.s-inw .mini::before{background:var(--szary)}
+.s-dom .mini::before{background:var(--miedz)}
+.tor{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain}
+.tor::-webkit-scrollbar{display:none}
+.tor.ciag{cursor:grabbing;scroll-snap-type:none}
+.tor.ciag *{pointer-events:none}
+.tor button{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;border:0;padding:0;background:#222;overflow:hidden}
+.tor img{width:100%;height:100%;object-fit:cover}
+.licz{position:absolute;left:10px;bottom:10px;z-index:2;background:rgba(17,18,19,.8);color:#fff;font-size:13px;font-weight:700;padding:5px 9px;line-height:1;pointer-events:none}
+.mini .mp,.mini .mn{position:absolute;bottom:8px;z-index:2;width:40px;height:40px;border:0;background:rgba(255,255,255,.92);color:var(--czern)}
+.mini .mp{right:54px}.mini .mn{right:8px}
+.mini .mp::after,.mini .mn::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor}
+.mini .mn::after{transform:translate(-70%,-50%) rotate(45deg)}
+.mini .mp::after{transform:translate(-30%,-50%) rotate(-135deg)}
+.mini .mp:hover,.mini .mn:hover{background:#fff}
+.mini button[disabled]{opacity:.35;cursor:default}
+.real h3{font-size:clamp(19px,1.35vw,24px);font-weight:700;line-height:1.25;margin-top:16px}
+.real p{font-size:15.5px;margin-top:4px}
+.s-inw .real p{color:#b4b4b4}
+.s-dom .real p{color:#5d544b}
+.uwaga{margin-top:clamp(28px,3vw,44px);font-size:14px;opacity:.8;max-width:56em}
+
+/* wezwanie na koncu podstrony */
+.cta .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,80px);align-items:end}
+.cta h2{font-size:clamp(32px,3.4vw,58px);line-height:1.04;font-weight:800;letter-spacing:-.02em}
+.cta p{font-size:clamp(17px,1.15vw,20px);color:#3e4146;margin-bottom:24px}
+.cta .belka{background:var(--czern)}
+.cta-dom .belka{background:var(--miedz)}
+
+/* o firmie */
+.dwie{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,2vw,36px)}
+.dwie a{display:block;position:relative;text-decoration:none;overflow:hidden;isolation:isolate;min-height:clamp(300px,30vw,520px)}
+.dwie img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.dwie a:hover img{transform:scale(1.03)}
+.dwie a::before{content:"";position:absolute;inset:0;z-index:-1}
+.dwie .di{color:#fff}
+.dwie .di::before{background:linear-gradient(to top,rgba(12,12,13,.88),rgba(12,12,13,.15) 70%)}
+.dwie .dd{color:var(--czern)}
+.dwie .dd::before{background:linear-gradient(to top,rgba(245,240,232,.97),rgba(245,240,232,.75) 40%,rgba(245,240,232,0) 75%)}
+.dwie .w{position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,2.4vw,40px)}
+.dwie h3{font-size:clamp(28px,2.6vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
+.dwie p{max-width:30em;margin-bottom:18px}
+.dwie .di p{color:#dcdcdc}
+.tekst{max-width:46em;font-size:clamp(17px,1.15vw,19px)}
+.tekst p+p{margin-top:14px}
+.rej{width:100%;border-collapse:collapse;font-size:16px}
+.rej th,.rej td{text-align:left;padding:12px 0;border-top:1px solid #dfe2e6;vertical-align:top}
+.rej th{font-weight:600;color:var(--szary-t);width:38%;padding-right:16px}
+
+/* kontakt */
+.kontakt{padding-top:0}
+.zgoda{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:400;line-height:1.45}
+.zgoda input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--czern)}
+.zgoda a{text-decoration:underline}
+.mapa{background:var(--jasny)}
+.mapa iframe{display:block;width:100%;height:clamp(340px,36vw,560px);border:0}
+.dojazd{padding:20px 0;font-size:15px;color:#3e4146}
+
+/* polityka */
+.polityka{max-width:52em;padding-bottom:clamp(56px,7vw,110px)}
+.polityka h2{font-size:clamp(22px,1.7vw,28px);font-weight:700;margin:36px 0 10px;line-height:1.25}
+.polityka p,.polityka li{font-size:17px;color:#2e3135}
+.polityka p+p{margin-top:10px}
+.polityka ul{padding-left:22px;display:grid;gap:6px;margin-top:8px}
+.polityka a{text-decoration:underline}
 
 @media (min-width:1900px){.tasma{grid-auto-columns:calc((100% - 4*20px)/5)}}
 @media (max-width:1180px){
@@ -258,7 +387,83 @@ form .btn{justify-self:start}
   .tresc p{font-size:14.5px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:1180px){
+  .wiersze{grid-template-columns:minmax(0,1fr)}
+  .realizacje{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .etapy{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta .wrap{grid-template-columns:minmax(0,1fr)}
+  .ph{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (max-width:760px){
+  /* telefon: zdjecie pod calym pierwszym ekranem, tekst na zdjeciu */
+  .ph{display:flex;flex-direction:column;justify-content:flex-end;position:relative;isolation:isolate;min-height:calc(100svh - var(--hh))}
+  .ph figure{position:absolute;inset:0;min-height:0;z-index:-2}
+  .ph::before{content:"";position:absolute;inset:0;z-index:-1}
+  .ph-inw::before{background:linear-gradient(to top,rgba(12,12,13,.94) 0%,rgba(12,12,13,.74) 50%,rgba(12,12,13,.2) 100%)}
+  .ph-dom::before{background:linear-gradient(to top,rgba(245,240,232,.98) 0%,rgba(245,240,232,.92) 42%,rgba(245,240,232,.5) 60%,rgba(245,240,232,0) 80%)}
+  .ph .tx{padding:0 4vw 26px;min-height:0}
+  .ph h1{font-size:clamp(31px,8.6vw,38px);margin-bottom:14px}
+  .ph .lead{font-size:16px;line-height:1.5;margin-bottom:24px}
+  .okr{margin-bottom:14px;font-size:13.5px}
+  .ph .belka{margin-bottom:16px}
+  .wiersze li{grid-template-columns:minmax(0,1fr);gap:6px;padding:18px 0}
+  .etapy{grid-template-columns:minmax(0,1fr);gap:28px}
+  .realizacje{grid-template-columns:minmax(0,1fr);gap:36px}
+  .dwie{grid-template-columns:minmax(0,1fr)}
+  .dwie a{min-height:340px}
+  .rej th{width:42%}
+  .pn{padding:26px 0 24px}
+  .pn h1{font-size:clamp(30px,8.4vw,38px)}
+  .zgoda{font-size:13.5px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .ph h1{font-size:29px}
+  .ph .lead{font-size:15px}
+}
+
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "GeneralContractor",
+   "@id": "https://techbet.lublin.pl/#firma",
+   "name": "TECHBET",
+   "legalName": "TECHBET Spółka z ograniczoną odpowiedzialnością",
+   "url": "https://techbet.lublin.pl/",
+   "logo": "https://techbet.lublin.pl/img/logo-192.png",
+   "image": "https://techbet.lublin.pl/img/i-hero-1600.webp",
+   "description": "Firma budowlana z Lublina: inwestycje budowlane oraz domy do stanu deweloperskiego. Wykonanie, organizacja budowy i dostawy materiałów.",
+   "telephone": "+48573132369",
+   "email": "biuro@techbet.lublin.pl",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Mełgiewska 30F",
+    "postalCode": "20-234",
+    "addressLocality": "Lublin",
+    "addressCountry": "PL"
+   },
+   "taxID": "9462686367",
+   "vatID": "PL9462686367",
+   "areaServed": "Lublin"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://techbet.lublin.pl/#strona",
+   "url": "https://techbet.lublin.pl/",
+   "name": "TECHBET",
+   "inLanguage": "pl-PL",
+   "publisher": {
+    "@id": "https://techbet.lublin.pl/#firma"
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -269,18 +474,18 @@ form .btn{justify-self:start}
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#" aria-label="TECHBET - strona główna">
+    <a class="logo" href="./" aria-label="TECHBET - strona główna">
       <svg viewBox="40 90 1070 290" role="img" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#111213"/><text x="350" y="358" font-family="Archivo,sans-serif" font-size="196" font-weight="400" textLength="745" lengthAdjust="spacingAndGlyphs"><tspan fill="#8a8989">TECH</tspan><tspan fill="#111213">BET</tspan></text></svg>
     </a>
     <ul class="menu" id="menu">
-      <li><a href="#inwestycje">Inwestycje</a></li>
-      <li><a href="#domy">Domy</a></li>
-      <li><a href="#o-firmie">O firmie</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="inwestycje/">Inwestycje</a></li>
+      <li><a href="domy/">Domy</a></li>
+      <li><a href="o-firmie/">O firmie</a></li>
+      <li><a href="kontakt/">Kontakt</a></li>
       <li class="tel-m"><a href="tel:+48573132369">Biuro: 573 132 369</a></li>
     </ul>
     <a class="tel" href="tel:+48573132369">573 132 369</a>
-    <a class="btn btn-c" href="#kontakt">Zapytaj o wycenę</a>
+    <a class="btn btn-c" href="kontakt/">Zapytaj o wycenę</a>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
   </div>
 </header>
@@ -289,21 +494,21 @@ form .btn{justify-self:start}
 <section class="hero">
   <div class="pas">
     <div class="wrap">
-      <h1>Firma budowlana z Lublina - inwestycje i domy do stanu deweloperskiego</h1>
+      <h1>Firma budowlana z Lublina&nbsp;- inwestycje i domy do stanu deweloperskiego</h1>
       <p>ul. Mełgiewska 30F, Lublin</p>
     </div>
   </div>
   <div class="drogi">
-    <a class="droga d-inw" href="#inwestycje">
-      <img src="img/i-hero-1024.webp" srcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, 50vw" width="2000" height="1333" alt="Budynek w konstrukcji z dźwigami wieżowymi" fetchpriority="high">
+    <a class="droga d-inw" href="inwestycje/">
+      <img src="img/i-hero-1024.webp" srcset="img/i-hero-640.webp 640w, img/i-hero-1024.webp 1024w, img/i-hero-1600.webp 1600w, img/i-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, max(50vw, 130vh)" width="2000" height="1334" alt="Budynek w konstrukcji z dźwigami wieżowymi" fetchpriority="high">
       <div class="tresc">
         <div class="znak"><svg viewBox="40 90 270 285" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#fff"/></svg><h2>Inwestycje</h2></div>
         <p>Budynki i obiekty realizowane od organizacji budowy, przez wykonawstwo, po dostawy materiałów.</p>
         <span class="btn btn-b">Zobacz inwestycje <i class="str"></i></span>
       </div>
     </a>
-    <a class="droga d-dom" href="#domy">
-      <img src="img/d-hero-1024.webp" srcset="img/d-hero-640.webp 640w, img/d-hero-1024.webp 1024w, img/d-hero-1600.webp 1600w, img/d-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, 50vw" width="2000" height="1677" alt="Nowoczesny dom jednorodzinny z drewnianą elewacją" fetchpriority="high">
+    <a class="droga d-dom" href="domy/">
+      <img src="img/d-hero-1024.webp" srcset="img/d-hero-640.webp 640w, img/d-hero-1024.webp 1024w, img/d-hero-1600.webp 1600w, img/d-hero-2000.webp 2000w" sizes="(max-width:760px) 100vw, max(50vw, 130vh)" width="2000" height="1677" alt="Nowoczesny dom jednorodzinny z drewnianą elewacją" fetchpriority="high">
       <div class="tresc">
         <div class="znak"><svg viewBox="40 90 270 285" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#a24f22"/><use href="#b-glif" fill="#111213"/></svg><h2>Domy</h2></div>
         <p>Budujemy domy do stanu deweloperskiego - z wykonaniem, organizacją prac i dostawami materiałów.</p>
@@ -313,7 +518,7 @@ form .btn{justify-self:start}
   </div>
 </section>
 
-<section class="sek s-inw" id="inwestycje">
+<section class="sek s-inw">
   <div class="wrap">
     <div class="glowa">
       <div><span class="belka"></span><h2>Inwestycje</h2></div>
@@ -328,19 +533,17 @@ form .btn{justify-self:start}
       <article class="kafel"><button data-big="img/i5-1600.webp" data-opis="Szkielet budynku" aria-label="Powiększ: Szkielet budynku"><img src="img/i5-720.webp" width="720" height="873" loading="lazy" alt="Szkielet budynku - stan surowy otwarty"></button><h3>Szkielet budynku</h3><p>Stan surowy otwarty</p></article>
       <article class="kafel"><button data-big="img/i6-1600.webp" data-opis="Budynek mieszkalny" aria-label="Powiększ: Budynek mieszkalny"><img src="img/i6-720.webp" width="720" height="533" loading="lazy" alt="Budynek mieszkalny - elewacja z balkonami"></button><h3>Budynek mieszkalny</h3><p>Elewacja z balkonami</p></article>
       <article class="kafel"><button data-big="img/i3-1600.webp" data-opis="Odbiór płyty" aria-label="Powiększ: Odbiór płyty"><img src="img/i3-720.webp" width="720" height="480" loading="lazy" alt="Odbiór płyty - ekipa na budowie"></button><h3>Odbiór płyty</h3><p>Ekipa na budowie</p></article>
-
     </div>
-    <div class="nawig"><small>Zdjęcia poglądowe - docelowo Państwa realizacje i ujęcia z drona.</small><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
+    <div class="nawig"><a class="btn btn-b" href="inwestycje/">Więcej o inwestycjach <i class="str"></i></a><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
   </div>
 </section>
 
-<section class="sek s-dom" id="domy">
+<section class="sek s-dom">
   <div class="wrap">
     <div class="glowa">
       <div><span class="belka"></span><h2>Domy</h2></div>
       <div>
         <p>Budujemy domy do stanu deweloperskiego. Zajmujemy się wykonaniem, organizacją prac i dostawami materiałów - Państwo dostają gotowy budynek i jasny zakres prac już na etapie wyceny.</p>
-        <p><a class="btn btn-m" href="#kontakt">Prześlij projekt do wyceny <i class="str"></i></a></p>
       </div>
     </div>
     <div class="tasma" data-galeria="dom">
@@ -350,17 +553,19 @@ form .btn{justify-self:start}
       <article class="kafel"><button data-big="img/d4-1600.webp" data-opis="Dom w bieli" aria-label="Powiększ: Dom w bieli"><img src="img/d4-720.webp" width="720" height="720" loading="lazy" alt="Dom w bieli - prosta, nowoczesna bryła"></button><h3>Dom w bieli</h3><p>Prosta, nowoczesna bryła</p></article>
       <article class="kafel"><button data-big="img/d5-1600.webp" data-opis="Wnętrze domu" aria-label="Powiększ: Wnętrze domu"><img src="img/d5-720.webp" width="720" height="480" loading="lazy" alt="Wnętrze domu - salon ze schodami"></button><h3>Wnętrze domu</h3><p>Salon ze schodami</p></article>
       <article class="kafel"><button data-big="img/d6-1600.webp" data-opis="Wnętrze domu" aria-label="Powiększ: Wnętrze domu"><img src="img/d6-720.webp" width="720" height="490" loading="lazy" alt="Wnętrze domu - strefa dzienna z kuchnią"></button><h3>Wnętrze domu</h3><p>Strefa dzienna z kuchnią</p></article>
-
     </div>
-    <div class="nawig"><small>Zdjęcia poglądowe - docelowo domy zbudowane przez TECHBET.</small><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
+    <div class="nawig"><a class="btn btn-m" href="domy/">Więcej o budowie domów <i class="str"></i></a><div class="strz"><button class="pop" aria-label="Poprzednie"></button><button class="nast" aria-label="Następne"></button></div></div>
   </div>
 </section>
 
-<section class="sek s-zak" id="o-firmie">
+<section class="sek s-zak">
   <div class="wrap">
     <div class="glowa">
       <div><span class="belka" style="background:var(--czern)"></span><h2>Jak prowadzimy budowę</h2></div>
-      <p>TECHBET to firma budowlana z siedzibą przy ul. Mełgiewskiej w Lublinie. Inwestycje i domy prowadzimy tak samo: jeden wykonawca, jedna osoba odpowiedzialna za budowę i zakres prac ustalony przed startem.</p>
+      <div>
+        <p>TECHBET to firma budowlana z siedzibą przy ul. Mełgiewskiej w Lublinie. Inwestycje i domy prowadzimy tak samo: jeden wykonawca, jedna osoba odpowiedzialna za budowę i zakres prac ustalony przed startem.</p>
+        <p><a class="btn btn-c" href="o-firmie/">O firmie <i class="str"></i></a></p>
+      </div>
     </div>
     <div class="trzy">
       <div><h3>Kompleksowe wykonanie</h3><p>Od fundamentów po stan deweloperski - wszystkie etapy budowy w jednych rękach.</p></div>
@@ -381,7 +586,7 @@ form .btn{justify-self:start}
   </div>
 </section>
 
-<section class="sek s-kon" id="kontakt">
+<section class="sek s-kon">
   <div class="wrap kon">
     <div>
       <span class="belka"></span>
@@ -397,9 +602,11 @@ form .btn{justify-self:start}
       <div class="cala"><span class="sr">Czego dotyczy zapytanie</span><div class="wybor" role="radiogroup" aria-label="Czego dotyczy zapytanie"><label><input type="radio" name="typ" value="inwestycja" checked> Inwestycja</label><label><input type="radio" name="typ" value="dom"> Dom</label></div></div>
       <div><label for="f-imie">Imię i nazwisko</label><input id="f-imie" name="imie" autocomplete="name"></div>
       <div><label for="f-tel">Telefon</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
-      <div class="cala"><label for="f-mail">E-mail</label><input id="f-mail" name="mail" type="email" autocomplete="email"></div>
-      <div class="cala"><label for="f-wiad">Opis inwestycji lub domu</label><textarea id="f-wiad" name="wiad" placeholder="Lokalizacja, powierzchnia, termin"></textarea></div>
-      <div class="cala"><label for="f-plik">Projekt (PDF, JPG, opcjonalnie)</label><input id="f-plik" name="plik" type="file" accept=".pdf,.jpg,.jpeg,.png"></div>
+      <div><label for="f-mail">E-mail</label><input id="f-mail" name="mail" type="email" autocomplete="email"></div>
+      <div><label for="f-miejsce">Miejscowość budowy</label><input id="f-miejsce" name="miejsce"></div>
+      <div class="cala"><label for="f-wiad">Opis inwestycji lub domu</label><textarea id="f-wiad" name="wiad" placeholder="Rodzaj budynku, powierzchnia, planowany termin"></textarea></div>
+      <div class="cala"><label for="f-plik">Projekt lub rysunki (PDF, JPG, PNG, ZIP - opcjonalnie, można kilka plików)</label><input id="f-plik" name="plik" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.zip"></div>
+      <div class="cala"><label class="zgoda"><input type="checkbox" name="zgoda" required> <span>Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie. Szczegóły w <a href="polityka-prywatnosci/">polityce prywatności</a>.</span></label></div>
       <div class="cala"><button class="btn btn-c" type="submit">Wyślij zapytanie</button></div>
       <p class="cala info wynik" id="wynik" aria-live="polite"></p>
     </form>
@@ -410,17 +617,17 @@ form .btn{justify-self:start}
 <footer class="stopka">
   <div class="wrap">
     <div>
-      <a class="logo" href="#" aria-label="TECHBET - na górę strony"><svg viewBox="40 90 1070 290" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#fff"/><text x="350" y="358" font-family="Archivo,sans-serif" font-size="196" font-weight="400" textLength="745" lengthAdjust="spacingAndGlyphs"><tspan fill="#9c9b9b">TECH</tspan><tspan fill="#fff">BET</tspan></text></svg></a>
+      <a class="logo" href="./" aria-label="TECHBET - strona główna"><svg viewBox="40 90 1070 290" aria-hidden="true"><rect x="48" y="97" width="233" height="45" fill="#9c9b9b"/><use href="#b-glif" fill="#fff"/><text x="350" y="358" font-family="Archivo,sans-serif" font-size="196" font-weight="400" textLength="745" lengthAdjust="spacingAndGlyphs"><tspan fill="#9c9b9b">TECH</tspan><tspan fill="#fff">BET</tspan></text></svg></a>
       <p>Firma budowlana z Lublina. Inwestycje budowlane i domy do stanu deweloperskiego.</p>
     </div>
-    <div><h3>Oferta</h3><ul><li><a href="#inwestycje">Inwestycje</a></li><li><a href="#domy">Domy</a></li><li><a href="#o-firmie">O firmie</a></li></ul></div>
+    <div><h3>Strona</h3><ul><li><a href="inwestycje/">Inwestycje</a></li><li><a href="domy/">Domy</a></li><li><a href="o-firmie/">O firmie</a></li><li><a href="kontakt/">Kontakt</a></li></ul></div>
     <div><h3>Biuro</h3><ul><li><a href="tel:+48573132369">573 132 369</a></li><li><a href="mailto:biuro@techbet.lublin.pl">biuro@techbet.lublin.pl</a></li></ul></div>
     <div><h3>Adres</h3><p>ul. Mełgiewska 30F<br>20-234 Lublin</p></div>
-    <div class="spod"><span>© <span id="rok">2026</span> TECHBET. Zdjęcia poglądowe: Unsplash.</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=techbet.lublin.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+    <div class="spod"><span>© <span id="rok">2026</span> TECHBET sp. z o.o. <a href="polityka-prywatnosci/">Polityka prywatności</a>. Zdjęcia poglądowe: Unsplash.</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=techbet.lublin.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
   </div>
 </footer>
 
-<div class="mob" id="mob"><a href="tel:+48573132369">Zadzwoń</a><a href="#kontakt">Zapytaj o wycenę</a></div>
+<div class="mob" id="mob"><a href="tel:+48573132369">Zadzwoń</a><a href="kontakt/">Zapytaj o wycenę</a></div>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
   <img alt="">

@@ -1,0 +1,36 @@
+
+@media (max-width:1180px){
+  .wiersze{grid-template-columns:minmax(0,1fr)}
+  .realizacje{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .etapy{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta .wrap{grid-template-columns:minmax(0,1fr)}
+  .ph{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (max-width:760px){
+  /* telefon: zdjecie pod calym pierwszym ekranem, tekst na zdjeciu */
+  .ph{display:flex;flex-direction:column;justify-content:flex-end;position:relative;isolation:isolate;min-height:calc(100svh - var(--hh))}
+  .ph figure{position:absolute;inset:0;min-height:0;z-index:-2}
+  .ph::before{content:"";position:absolute;inset:0;z-index:-1}
+  .ph-inw::before{background:linear-gradient(to top,rgba(12,12,13,.94) 0%,rgba(12,12,13,.74) 50%,rgba(12,12,13,.2) 100%)}
+  .ph-dom::before{background:linear-gradient(to top,rgba(245,240,232,.98) 0%,rgba(245,240,232,.92) 42%,rgba(245,240,232,.5) 60%,rgba(245,240,232,0) 80%)}
+  .ph .tx{padding:0 4vw 26px;min-height:0}
+  .ph h1{font-size:clamp(31px,8.6vw,38px);margin-bottom:14px}
+  .ph .lead{font-size:16px;line-height:1.5;margin-bottom:24px}
+  .okr{margin-bottom:14px;font-size:13.5px}
+  .ph .belka{margin-bottom:16px}
+  .wiersze li{grid-template-columns:minmax(0,1fr);gap:6px;padding:18px 0}
+  .etapy{grid-template-columns:minmax(0,1fr);gap:28px}
+  .realizacje{grid-template-columns:minmax(0,1fr);gap:36px}
+  .dwie{grid-template-columns:minmax(0,1fr)}
+  .dwie a{min-height:340px}
+  .rej th{width:42%}
+  .pn{padding:26px 0 24px}
+  .pn h1{font-size:clamp(30px,8.4vw,38px)}
+  .zgoda{font-size:13.5px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .ph h1{font-size:29px}
+  .ph .lead{font-size:15px}
+}
