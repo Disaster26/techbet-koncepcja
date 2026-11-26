@@ -15,13 +15,24 @@ function ciagnij(t,krok){
   t.addEventListener('click',function(e){if(ruch){e.preventDefault();e.stopPropagation()}},true);
   t.addEventListener('dragstart',function(e){e.preventDefault()});
 }
-// tasmy na stronie glownej
-[].slice.call(d.querySelectorAll('.tasma')).forEach(function(t){
-  var nav=t.nextElementSibling,krok=function(){var k=t.querySelector('.kafel');return k?k.getBoundingClientRect().width+parseFloat(getComputedStyle(t).columnGap||20):300};
-  nav.querySelector('.pop').addEventListener('click',function(){t.scrollBy({left:-krok(),behavior:'smooth'})});
-  nav.querySelector('.nast').addEventListener('click',function(){t.scrollBy({left:krok(),behavior:'smooth'})});
-  ciagnij(t,krok);
+// zakladki realizacji (inwestycje / domy)
+[].slice.call(d.querySelectorAll('.zakl')).forEach(function(z){
+  var bt=[].slice.call(z.querySelectorAll('[role=tab]'));
+  function wybierz(b){bt.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;d.getElementById(x.getAttribute('aria-controls')).hidden=!on})}
+  bt.forEach(function(b,i){b.addEventListener('click',function(){wybierz(b)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var n=bt[(i+k+bt.length)%bt.length];wybierz(n);n.focus()}})});
 });
+// licznik
+var lc=[].slice.call(d.querySelectorAll('[data-do]'));
+function licz(el){var cel=+el.dataset.do,t0=null,czas=1600;function krok(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/czas);el.textContent=Math.round(cel*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(krok)}el.textContent='0';requestAnimationFrame(krok)}
+if(lc.length&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){licz(x.target);io.unobserve(x.target)}})},{threshold:.6});
+  lc.forEach(function(el){io.observe(el)});
+}
+// telefon (bez kursora): kolor zdjec i belka po wejsciu w widok
+if(matchMedia('(hover: none)').matches&&'IntersectionObserver' in window){
+  var iw=new IntersectionObserver(function(en){en.forEach(function(x){x.target.classList.toggle('wid',x.isIntersecting)})},{rootMargin:'-30% 0px -30% 0px'});
+  [].slice.call(d.querySelectorAll('.droga,.karta')).forEach(function(el){iw.observe(el)});
+}
 // galerie w kartach realizacji
 [].slice.call(d.querySelectorAll('.mini')).forEach(function(m){
   var t=m.querySelector('.tor'),n=t.children.length,lz=m.querySelector('.licz'),bp=m.querySelector('.mp'),bn=m.querySelector('.mn');
@@ -35,7 +46,7 @@ function ciagnij(t,krok){
 // powiekszenie
 var lb=d.getElementById('lb'),li=lb.querySelector('img'),lp=lb.querySelector('p'),lista=[],nr=0;
 function pokaz(){var b=lista[nr];li.src=b.dataset.big;li.alt=b.dataset.opis||'';lp.textContent=b.dataset.opis||''}
-d.addEventListener('click',function(e){var b=e.target.closest('[data-big]');if(!b)return;var g=b.closest('.tasma,.tor');lista=g?[].slice.call(g.querySelectorAll('[data-big]')):[b];nr=lista.indexOf(b);pokaz();lb.classList.add('on');lb.querySelector('.zam').focus()});
+d.addEventListener('click',function(e){var b=e.target.closest('[data-big]');if(!b)return;var g=b.closest('.tor,.panel,.siatka');lista=g?[].slice.call(g.querySelectorAll('[data-big]')):[b];nr=lista.indexOf(b);pokaz();lb.classList.add('on');lb.querySelector('.zam').focus()});
 function zamknij(){lb.classList.remove('on');li.removeAttribute('src')}
 lb.querySelector('.zam').addEventListener('click',zamknij);
 lb.querySelector('.pop').addEventListener('click',function(){nr=(nr-1+lista.length)%lista.length;pokaz()});
